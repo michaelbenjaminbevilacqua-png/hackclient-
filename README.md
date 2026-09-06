@@ -34,6 +34,23 @@ cd hackclient-
 # (Add your project-specific commands here)
 ```
 
+## Browser Build and Sharing
+
+The browser client is built from `eaglercraft-1.14-workspace-main`:
+
+```bash
+cd eaglercraft-1.14-workspace-main
+./gradlew --no-daemon --max-workers=1 -Dorg.gradle.jvmargs='-Xmx2G -Xms512M' :target_teavm_javascript:makeMainOfflineDownload
+```
+
+The generated client is in `target_teavm_javascript/javascript`.
+
+GitHub Actions publishes the latest successful build to GitHub Pages after every push to `main`. Enable **Settings > Pages > Source: GitHub Actions** once, then share:
+
+```text
+https://michaelbenjaminbevilacqua-png.github.io/hackclient-/EaglercraftX_1.8_Offline_en_US.html
+```
+
 ## Project Structure
 
 ```
